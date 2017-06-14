@@ -26,7 +26,7 @@ componentDidMount(){
       <div className="yodatalks">
         <ul>
           {this.state.result.map(function(user, i){
-            return <p key={i}>{user.firstName} {user.lastName}</p>
+            return <p className='lead' key={i}>{user.firstName} {user.lastName}</p>
           })}
         </ul>
       </div>
