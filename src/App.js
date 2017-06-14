@@ -6,13 +6,17 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import axios from 'axios';
+import Home from './home';
 
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
+
+
+// const Home = () => (
+//   <div>
+//     <h2>Home</h2>
+//   </div>
+// )
 
 const About = () => (
   <div>
@@ -59,6 +63,7 @@ const Application = ({ match }) => (
 )
 
 const App = () => (
+
   <Router>
     <div className="container">
       <nav className="navbar navbar-default">
