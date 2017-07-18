@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>serializeArray demo</title>
+  <style>
+  body, select {
+    font-size: 14px;
+  }
+  form {
+    margin: 5px;
+  }
+  p {
+    color: red;
+    margin: 5px;
+  }
+  b {
+    color: blue;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<p><b>Results:</b> <span id="results"></span></p>
+<form onSubmit="submitForm()" method="post">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey"><br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse"><br><br>
+  <input type="submit" value="Submit">
+
+</form>
+ 
+
+
+<script>
+//   function showValues() {
+//     var fields = $( ":input" ).serializeArray();
+//     $( "#results" ).empty();
+//     jQuery.each( fields, function( i, field ) {
+//       $( "#results" ).append( field.value + " " );
+//     });
+//     console.log(fields)
+//   }
+ 
+//   $( ":checkbox, :radio" ).click( showValues );
+//   $( "select" ).change( showValues );
+  //showValues();
+
+  function submitForm(){
+    alert("The form was submitted");
+    console.log("Hello");
+}
+</script>
+ 
+</body>
+</html>
