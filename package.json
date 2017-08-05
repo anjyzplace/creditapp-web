@@ -13,7 +13,8 @@
     "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "react-scripts": "1.0.7",
+    "webpack-dotenv-plugin": "^2.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

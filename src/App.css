@@ -23,11 +23,14 @@
   to { transform: rotate(360deg); }
 }
 .navbar-inverse {
-background-color: transparent!important
+background-color: transparent!important;
 }
 .navbar-inverse .navbar-nav>li>a {
      color: #df691a!important;
 }
-.navbar {
-    font-size: 16px;
+.navbar .dropdown-menu>li>a {
+    font-size: 16px!important;
 }
+  .navbar-inverse .navbar-nav>li>a {
+    font-size: 16px!important;
+  }
