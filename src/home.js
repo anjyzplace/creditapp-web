@@ -1,6 +1,5 @@
 import React from 'react' ;
 import axios from 'axios';
-require('dotenv').config()
 
 
 class Home extends React.Component {
@@ -14,24 +13,19 @@ class Home extends React.Component {
 }
 
 componentDidMount(){
-   axios.get('http://localhost:8080/application/all')
-  //axios.get('https://creditapp-api.herokuapp.com/application/all')
-  
+  axios.get(`http://${process.env.REACT_APP_DOMAIN}:8080/application/all`) 
   .then(function (response) {
-    console.log(response.data);
-    console.log(process.env.DOMAIN);
     this.setState({result: response.data});
   }.bind(this));
 }
 
   render() {
-
     return (
       <div className="yodatalks">
         <ul>
           {this.state.result.map(function(user, i){
             return <div>
-              <p className='lead' key={i}>{user.firstName} {user.lastName}    : {user.DateOfBirth} </p>
+              <p className='lead' key={i}>{user.firstName} {user.lastName} - {user.DateOfBirth} </p>
             </div>
           })}
         </ul>
