@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import ApplicationForm from './component/applicationform';
+import ApplicationForm from './component/applicationform';
 import Application from './component/application';
-import ApplicationForm from './component/form';
 import {
   BrowserRouter as Router,
   Route,
@@ -12,7 +11,7 @@ import {
 import { Grid, Nav , NavItem,NavDropdown, MenuItem , Navbar, Jumbotron, Button } from 'react-bootstrap';
 import axios from 'axios';
 import Home from './home';
-require('dotenv').config()
+
 
 
 
@@ -27,6 +26,7 @@ const About = () => (
 
   <div>
     <h2>About</h2>
+    <p>{process.env.REACT_APP_DOMAIN}</p>
   </div>
 )
 
