@@ -13,6 +13,7 @@ class Home extends React.Component {
 }
 
 componentDidMount(){
+  console.log(process.env.NODE_ENV);
   axios.get(`http://${process.env.REACT_APP_DOMAIN}:8080/application/all`) 
   .then(function (response) {
     this.setState({result: response.data});
