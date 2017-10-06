@@ -21,8 +21,16 @@ componentDidMount(){
 }
 
   render() {
+    const divStyle = {
+      color: 'blue',
+      height: 500,
+      backgroundImage: 'url(' + "/got.jpg" + ')',
+    };
     return (
       <div className="yodatalks">
+        <div style={divStyle}>
+          <h2>Game of Thrones</h2>
+        </div>
         <ul>
           {this.state.result.map(function(user, i){
             return <div>

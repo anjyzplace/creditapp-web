@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ApplicationForm from './component/applicationform';
+import ContactForm from './component/contact';
 import Application from './component/application';
+import ThankYou from './component/thanks';
 import {
   BrowserRouter as Router,
   Route,
@@ -103,6 +105,8 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/application/create" component={ApplicationForm} />
+      <Route path="/contact" component={ContactForm} />
+      <Route path="/contactus/thankyou" component={ThankYou} />
 
     </div>
   </Router>
