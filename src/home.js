@@ -12,24 +12,59 @@ class Home extends React.Component {
     };
 }
 
-componentDidMount(){
-  console.log(process.env.NODE_ENV);
-  axios.get(`http://${process.env.REACT_APP_DOMAIN}:8080/application/all`) 
-  .then(function (response) {
-    this.setState({result: response.data});
-  }.bind(this));
-}
-
   render() {
+    const divStyle = {
+      color: 'blue',
+      height: 500,
+      backgroundImage: 'url(' + "/got.jpg" + ')',
+    };
     return (
-      <div className="yodatalks">
-        <ul>
-          {this.state.result.map(function(user, i){
-            return <div>
-              <p className='lead' key={i}>{user.firstName} {user.lastName} - {user.DateOfBirth} </p>
-            </div>
-          })}
-        </ul>
+      <div className="container marketing">
+        <div style={divStyle}>
+          <h2>Game of Thrones</h2>
+        </div>
+        
+
+      <div className="row">
+      <hr className="featurette-divider" />
+
+      <div className="row featurette">
+        <div className="col-md-7">
+          <h2 className="featurette-heading">First featurette heading. <span className="text-muted">It'll blow your mind.</span></h2>
+          <p className="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div className="col-md-5">
+          <img className="featurette-image img-responsive center-block" src="/temp.png" alt="Generic placeholder image" />
+        </div>
+      </div>
+
+      <hr className="featurette-divider" />
+
+      <div className="row featurette">
+        <div className="col-md-7 col-md-push-5">
+          <h2 className="featurette-heading">Oh yeah, it's that good. <span className="text-muted">See for yourself.</span></h2>
+          <p className="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div className="col-md-5 col-md-pull-7">
+          <img className="featurette-image img-responsive center-block" src="/temp.png" alt="Generic placeholder image" />
+        </div>
+      </div>
+
+      <hr className="featurette-divider" />
+
+      <div className="row featurette">
+        <div className="col-md-7">
+          <h2 className="featurette-heading">And lastly, this one. <span className="text-muted">Checkmate.</span></h2>
+          <p className="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div className="col-md-5">
+          <img className="featurette-image img-responsive center-block" src="/temp.png" alt="Generic placeholder image" />
+        </div>
+      </div>
+
+      <hr className="featurette-divider" />
+      </div>
+      
       </div>
     );
   }

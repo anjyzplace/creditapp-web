@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ApplicationForm from './component/applicationform';
+import ContactForm from './component/contact';
 import Application from './component/application';
+import Applications from './component/applications';
+import Demo from './component/demo';
+import Login from './component/login';
+import Message from './component/message';
+import ThankYou from './component/thanks';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,6 +17,13 @@ import {
 import { Grid, Nav , NavItem,NavDropdown, MenuItem , Navbar, Jumbotron, Button } from 'react-bootstrap';
 import axios from 'axios';
 import Home from './home';
+import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
+
+const config = {
+  issuer: 'https://dev-393955.oktapreview.com/oauth2/default',
+  redirect_uri: window.location.origin + '/implicit/callback',
+  clientId: '0oacb7gbm63I0WhgS0h7'
+}
 
 
 
@@ -85,6 +98,7 @@ const App = () => (
             <NavItem ><Link to="/">Home</Link></NavItem>
             <NavDropdown eventKey={3} title="Application" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}><Link to="/application/create">New Application</Link></MenuItem>
+              <MenuItem eventKey={3.2}><Link to="/application/list">Existing Applications</Link></MenuItem>
               {/* <MenuItem eventKey={3.2}>Contact</MenuItem>
           <MenuItem eventKey={3.3}>Applications</MenuItem>
           <MenuItem divider />
@@ -103,6 +117,17 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/application/create" component={ApplicationForm} />
+      <Route path="/application/list" component={Applications} />
+      <Route path="/contact" component={ContactForm} />
+      <Route path="/contactus/thankyou" component={ThankYou} />
+      <Security issuer={config.issuer}
+                  client_id={config.clientId}
+                  redirect_uri={config.redirect_uri} >
+          <Route path='/demo' exact={true} component={Demo}/>
+          <Route path='/login' exact={true} component={Login}/>
+          <Route path='/message' exact={true} component={Message}/>
+          <Route path='/implicit/callback' component={ImplicitCallback} />
+        </Security>
 
     </div>
   </Router>
