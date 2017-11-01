@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
 // Load the Sign-In Widget module
-let OktaSignIn = require('@okta/okta-signin-widget');
+import OktaSignIn from '@okta/okta-signin-widget';
 
 // Use OktaSignIn
 let signIn = new OktaSignIn({baseUrl: `${process.env.REACT_APP_OKLA_DOMAIN}`});
