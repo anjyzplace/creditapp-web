@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React from "react";
+// import { render } from "react-dom";
 import Form from "react-jsonschema-form";
 import axios from 'axios';
-import config from './config';
+
 
 
 const schema = {
@@ -31,7 +31,7 @@ const log = (type) => console.log.bind(console, type);
 const onSubmit = ({formData}) => process(formData);
 ;
 function process(e) {
-  console.log("yay I'm valid!");
+  console.log(`yay I'm valid!`);
     axios.post(`http://localhost:8080/contact`, e)
   .then(function (response) {
     console.log(response);
@@ -43,8 +43,11 @@ function process(e) {
     console.log(e);
 }
 
-class ContactForm extends React.Component {
+class Contact extends React.Component {
 
+  componentDidMount(){
+    console.log(process.env.NODE_ENV);
+  }
     
     render(){
     return(
@@ -59,4 +62,4 @@ class ContactForm extends React.Component {
 );
     }
 }   
-export default ContactForm;
+export default Contact;

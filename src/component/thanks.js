@@ -2,6 +2,10 @@ import React from 'react';
 
 class ThankYou extends React.Component {
 
+  componentDidMount(){
+    console.log(process.env.NODE_ENV);
+  }
+  
   render(){
     const divStyle = {
       height: 500,
