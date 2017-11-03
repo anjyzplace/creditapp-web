@@ -17,7 +17,7 @@ import {
 import { Grid, Nav , NavItem,NavDropdown, MenuItem , Navbar, Jumbotron, Button } from 'react-bootstrap';
 import axios from 'axios';
 import Home from './home';
-import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
+import { Security, SecureRoute, ImplicitCallback } from './okta-react';
 
 const config = {
   issuer: 'https://dev-393955.oktapreview.com/oauth2/default',

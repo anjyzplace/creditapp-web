@@ -15,7 +15,7 @@
     "uglify-es": "^3.1.6"
   },
   "devDependencies": {
-    "react-scripts": "1.0.16"
+    "react-scripts": "1.0.17"
   },
   "scripts": {
     "start": "react-scripts start",
