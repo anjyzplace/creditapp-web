@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import React, { Component } from 'react';
-import { withAuth } from '@okta/okta-react';
+import { withAuth } from '../okta-react';
 
 export default withAuth(class MessageList extends Component {
   constructor(props) {

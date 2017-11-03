@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ApplicationForm from './component/applicationform';
-import ContactForm from './component/contact';
+import Contact from './component/contact';
 import Application from './component/application';
 import Applications from './component/applications';
 import Demo from './component/demo';
@@ -17,7 +17,7 @@ import {
 import { Grid, Nav , NavItem,NavDropdown, MenuItem , Navbar, Jumbotron, Button } from 'react-bootstrap';
 import axios from 'axios';
 import Home from './home';
-import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
+import { Security, SecureRoute, ImplicitCallback } from './okta-react';
 
 const config = {
   issuer: 'https://dev-393955.oktapreview.com/oauth2/default',
@@ -118,7 +118,7 @@ const App = () => (
       <Route path="/about" component={About} />
       <Route path="/application/create" component={ApplicationForm} />
       <Route path="/application/list" component={Applications} />
-      <Route path="/contact" component={ContactForm} />
+      <Route path="/contact" component={Contact} />
       <Route path="/contactus/thankyou" component={ThankYou} />
       <Security issuer={config.issuer}
                   client_id={config.clientId}

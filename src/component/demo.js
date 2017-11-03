@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { withAuth } from '@okta/okta-react';
+import { withAuth } from '../okta-react';
 
 export default withAuth(class Demo extends Component {
   constructor(props) {
